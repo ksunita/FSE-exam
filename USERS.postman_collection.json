@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "9a223fcf-a8e2-4d32-a566-1f5d6f96d34a",
+		"name": "USERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registeration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Konada\",\r\n    \"lastname\": \"Sunita\",\r\n    \"gender\": \"Female\",\r\n    \"dob\": \"05-07-1998\",\r\n    \"email\": \"konadasunita5@gmail.com\",\r\n    \"password\": \"Sunita123\",\r\n    \"contactnumber\": \"9999999980\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1.0/tweets/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/login?email=konadasunita5@gmail.com&password=Sunita123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "konadasunita5@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "Sunita123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb25hZGFzdW5pdGE1QGdtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MS9sb2dpbiIsImV4cCI6MTY2MTk1ODU2NH0.VhvVcUI9-bOixmKO4SBZ1PyYBmc4c8E9f5aU6uAvOjA",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/v1.0/tweets/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user Details Based on particular user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb25hZGFzdW5pdGE1QGdtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MS9sb2dpbiIsImV4cCI6MTY2MTk1ODU2NH0.VhvVcUI9-bOixmKO4SBZ1PyYBmc4c8E9f5aU6uAvOjA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "SaiChaitanya5@gmail.com",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgotPassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrb25hZGFzdW5pdGE1QGdtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MS9sb2dpbiIsImV4cCI6MTY2MTk1ODU2NH0.VhvVcUI9-bOixmKO4SBZ1PyYBmc4c8E9f5aU6uAvOjA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstName\":\"Konada\",\r\n\"lastname\":\"Sunita\",\r\n\"gender\":\"Female\",\r\n\"dob\":\"05-07-1998\",\r\n\"email\":\"konadasunita5@gmail.com\",\r\n\"password\":\"Sunita0516\",\r\n\"contactnumber\":\"9999999980\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1.0/tweets/user/forgotPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"user",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
